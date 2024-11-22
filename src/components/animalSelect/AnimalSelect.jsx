@@ -26,7 +26,7 @@ export default function SelectAnimal(props) {
   };
 
   return (
-    <div>
+    <div className='imglist'>
       {shflAnimls.map((animal, index) => (
         <div key={index}>
           <img
