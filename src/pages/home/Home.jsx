@@ -1,38 +1,13 @@
-import { useState } from "react";
-import SelectAnimal from "../../components/animalSelect/AnimalSelect";
-import Result from "../../components/result/Result";
-import AnimalName from "../../components/animalName/AnimalName";
+import React from 'react'
+import Game from '../../components/game/Game'
+import { animals } from "../../AnimalsDb"
 
-function Home() {
-    const [number, setNumber] = useState();
-    const [message, setMessage] = useState();
-  
-    const receiveNum = (num) => {
-      setNumber(num)
-    }
-  
-    const receiveMsg = (msg) => {
-      setMessage(msg)
-    }
-  
+const Home = () => {
     return (
-      <div className="App">
-        <div className="title">
-          <h1>ANIMAL MATCHING GAME</h1>
+        <div>
+            <Game animals={animals} />
         </div>
-        <div className='container'>
-          <div className="result">
-            <Result message={message}/>
-          </div>
-          <div className="animalName">
-            <AnimalName numfun={receiveNum}/>
-          </div>
-          <div className="animalPhotos">
-            <SelectAnimal setResultMessage={receiveMsg}/>
-          </div>
-        </div>
-      </div>
-    );
-  }
+    )
+}
 
-export default Home;
+export default Home

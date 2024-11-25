@@ -1,17 +1,11 @@
-import { useState } from "react";
-import { animals } from "../../assets/AnimalsDb";
+import React from 'react'
 
-export default function AnimalName(props) {
-  const [animalName, setAnimalName] = useState();
-  const [index, setIndex] = useState();
-
-  const number = Math.floor(Math.random() * 10) + 1;
-  const animal = animals[number];
-
+const AnimalName = (props) => {
   return (
-    <>
-      <p>{animal.name}</p>
-      {props.numfun(number)}
-    </>
-  );
+    <div>
+      <h4>{props.name}</h4>
+    </div>
+  )
 }
+
+export default AnimalName
